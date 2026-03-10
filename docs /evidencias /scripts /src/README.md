@@ -8,6 +8,10 @@ Hemili Victoria Cavalcante Tenorio - RA = 414750179554
 
 Gustavo Vinicius - RA = 426486379554
 
+Kelmi Gabriel - RA = 428880179554
+
+Daniella Karoliny - RA = 428880079554
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Esse trabalho tem como objetivo especionar uma pequena empresa de Farmácia, no qual iremos criar um sistema operacional para proteção de dados.
