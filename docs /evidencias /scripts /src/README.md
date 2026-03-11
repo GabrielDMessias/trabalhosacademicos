@@ -6,7 +6,7 @@ Lucas ventino da Silva - RA = 427884379554
 
 Hemili Victoria Cavalcante Tenorio - RA = 414750179554
 
-Gustavo Vinicius - RA = 426486379554
+Gustavo Vinicius De Oliveira - RA = 426486379554
 
 Kelmi Gabriel - RA = 428880179554
 
