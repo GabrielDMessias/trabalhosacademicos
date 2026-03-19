@@ -14,4 +14,4 @@ Daniella Karoliny - RA = 428880079554
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Esse trabalho tem como objetivo especionar uma pequena empresa de Farmácia, no qual iremos criar um sistema operacional para proteção de dados.
+# Esse trabalho tem como objetivo inspecionar uma pequena empresa de Farmácia, no qual iremos criar um sistema operacional para proteção de dados.
