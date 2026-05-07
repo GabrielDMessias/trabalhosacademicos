@@ -80,9 +80,3 @@ Teste	Objetivo	Procedimento	Resultado Esperado
 6	Alertas de validade	Alterar data de validade de produto próximo ao vencimento	Notificação automática gerada para alerta de vencimento
 7	Backup do banco de dados	Executar backup manual e automático	Arquivo de backup gerado e restaurável sem perda de dados
 
-Se você quiser, posso transformar todo esse conteúdo em um diagrama técnico visual completo, incluindo:
-
-Topologia de rede
-Arquitetura de sistema em camadas
-Fluxo de dados do banco
-Componentes (VMs, serviços, dispositivos)
