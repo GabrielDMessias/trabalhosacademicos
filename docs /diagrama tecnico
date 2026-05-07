@@ -1,0 +1,88 @@
+1. Topologia de Rede
+
+Baseada na necessidade de controle interno e vendas online:
+
+[Internet / Cliente Online]
+        │
+[Firewall / Roteador da Farmácia]
+        │
++------------------------+
+| Servidor Web / Aplicação |
+|  - Sistema de Estoque    |
+|  - Sistema de Vendas     |
+|  - Sistema de Notificações|
++------------------------+
+        │
+[Banco de Dados]
+        │
++------------------------+
+| Backup Automático      |
++------------------------+
+        │
+[Estações de Trabalho na Farmácia]
+  - Funcionários
+  - Scanner de Código de Barras
+  - Impressora Fiscal
+
+Observações:
+
+Firewall protege o sistema contra acessos externos indevidos.
+Servidor Web/Aplicação centraliza a lógica de negócios.
+Banco de dados centraliza produtos, vendas e usuários.
+Backup automático evita perda de dados importantes.
+Estações de trabalho são usadas pelos colaboradores para registro e vendas.
+2. Arquitetura do Sistema
+
+Modelo em Camadas (3-Tier)
+
+Camada de Apresentação (Frontend)
+Interface simples e eficiente para funcionários (login, cadastro de produtos, vendas, notificações).
+Dashboard para monitoramento de estoque e produtos próximos da validade.
+Camada de Aplicação (Backend)
+Gerenciamento de estoque: entrada, saída, validade, reposição.
+Controle de vendas: registro de transações e emissão de notas fiscais.
+Alertas automáticos: produtos com baixo estoque ou vencendo.
+Camada de Dados (Database)
+Armazena produtos, vendas, usuários, alertas e logs.
+Backup periódico para evitar perda de informações.
+
+Fluxo de Comunicação:
+
+Frontend → Backend → Banco de Dados → Backend → Frontend
+3. Modelo de Dados (Resumo das Tabelas)
+Tabela	Campos Principais	Finalidade
+Produtos	id, nome, categoria, quantidade, validade, preco	Controle de estoque, monitoramento de validade
+Vendas	id_venda, id_produto, quantidade, total, data_hora	Registro de vendas, emissão de notas fiscais
+Usuários	id, nome, cargo, login, senha, permissão	Controle de acesso e permissões
+Alertas	id_alerta, id_produto, tipo_alerta, data_hora	Notificações de estoque baixo ou produto vencendo
+Logs	id_log, usuario, acao, data_hora	Auditoria do sistema
+4. Lista de Componentes
+Infraestrutura / VMs
+VM Servidor Web: Hospeda o frontend do sistema.
+VM Servidor de Aplicação: Processa lógica de estoque, vendas e notificações.
+VM Banco de Dados: MySQL/PostgreSQL com backup automático.
+VM Backup: Armazena cópias periódicas em nuvem ou NAS.
+Sensores / Dispositivos
+Scanner de código de barras (registro de produtos).
+Impressora fiscal (emissão de notas).
+Leitor de temperatura (opcional, controle de armazenagem de medicamentos sensíveis).
+Serviços
+Sistema de autenticação de usuários e controle de permissões.
+Serviço de notificação (alertas de estoque e vencimento).
+Serviço de logs e auditoria.
+5. Plano de Testes
+Teste	Objetivo	Procedimento	Resultado Esperado
+1	Login do funcionário	Inserir login e senha válidos	Usuário autenticado e acesso ao dashboard
+2	Cadastro de produto	Adicionar novo medicamento com validade e quantidade	Produto registrado no banco e visível na tela de estoque
+3	Controle de estoque	Registrar entrada e saída de produtos	Quantidade correta atualizada no banco
+4	Venda de produto	Registrar venda de produto	Estoque reduzido, nota fiscal emitida e registro de venda salvo
+5	Alertas de estoque baixo	Reduzir quantidade de um produto até limite crítico	Notificação automática gerada para reposição
+6	Alertas de validade	Alterar data de validade de produto próximo ao vencimento	Notificação automática gerada para alerta de vencimento
+7	Backup do banco de dados	Executar backup manual e automático	Arquivo de backup gerado e restaurável sem perda de dados
+
+Se você quiser, posso transformar todo esse conteúdo em um diagrama técnico visual completo, incluindo:
+
+Topologia de rede
+Arquitetura de sistema em camadas
+Fluxo de dados do banco
+Componentes (VMs, serviços, dispositivos)
